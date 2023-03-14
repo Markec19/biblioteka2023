@@ -32,22 +32,41 @@ public class Knjiga {
 	}
 	
 	public void setAutori(List<Autor> autori) {
+		if(autori == null)
+			throw new NullPointerException("Autori ne mogu biti null");
+		
 		this.autori = autori;
 	}
 	
 	public void setNaslov(String naslov) {
+		if(naslov == null)
+			throw new NullPointerException("Naslov ne moze biti null");
+		if(naslov.isEmpty())
+			throw new IllegalArgumentException("Naslov ne moze biti prazan");
+		
 		this.naslov = naslov;
 	}
 	
 	public void setIsbn(long isbn) {
+		if(isbn == 0)
+			throw new IllegalArgumentException("ISBN ne moze biti nula");
+		
 		this.isbn = isbn;
 	}
 	
 	public void setIzdavac(String izdavac) {
+		if(izdavac == null)
+			throw new NullPointerException("Izdavac ne moze biti null");
+		if(izdavac.isEmpty())
+			throw new IllegalArgumentException("Izdavac ne moze biti prazan");
+		
 		this.izdavac = izdavac;
 	}
 	
 	public void setIzdanje(int izdanje) {
+		if(izdanje == 0)
+			throw new IllegalArgumentException("Izdanje ne moze biti nula");
+		
 		this.izdanje = izdanje;
 	}
 
