@@ -25,6 +25,9 @@ public class Biblioteka implements BibliotekaInterfejs {
 
 	@Override
 	public void obrisKnjigu(Knjiga knjiga) {
+		if(knjiga == null)
+			throw new NullPointerException("Knjiga ne sme biti null");
+		
 		knjige.remove(knjiga);
 	}
 
