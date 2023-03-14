@@ -32,6 +32,8 @@ public class Knjiga {
 	}
 	
 	public void setAutori(List<Autor> autori) {
+		if(autori == null)
+			throw new NullPointerException("Autori ne mogu biti null");
 		
 		this.autori = autori;
 	}
@@ -62,6 +64,9 @@ public class Knjiga {
 	}
 	
 	public void setIzdanje(int izdanje) {
+		if(izdanje == 0)
+			throw new IllegalArgumentException("Izdanje ne moze biti nula");
+		
 		this.izdanje = izdanje;
 	}
 
